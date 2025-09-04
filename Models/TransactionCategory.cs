@@ -1,4 +1,3 @@
-using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace BudgetApp.Models;
@@ -15,6 +14,5 @@ public class TransactionCategory
     public string? Description { get; set; }
     
     [Required(ErrorMessage = "Transaction type is required.")]
-    [DefaultValue(TransactionType.Income)]
     public TransactionType Type { get; set; }
 }

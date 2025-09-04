@@ -8,8 +8,9 @@ public class Transaction
     
     public Guid UserId { get; set; } // Foreign key to owning User entity
     
-    public Guid CategoryId { get; set; } // Foreign key to associated TransactionCategory entity
-    
+    [Required(ErrorMessage = "Transaction category is required.")]
+    public TransactionCategory? Category { get; set; }
+
     [Required(ErrorMessage = "Transaction frequency must be set.")]
     public TransactionFrequency Frequency { get; set; }
     
